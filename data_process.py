@@ -1,28 +1,51 @@
-  
+# 으악 이건 matlab으로 다시...
 import pickle
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Rawdata(.dat파일 - 실험파일) -> pickle로 저장
+# matlab을 이용해 원래 신호, 노이즈 추가한 신호를 csv로 저장
+# 설정 정보 불러오기
+class Configuration:
+    def __init__(self):
+        config = self.load()
+        self.fname = config['FNAME']
+        self.delimiter = config['DELIMITER']
+        self.dtype = config['DTYPE']
 
-## .dat 불러오기
-def load(fpath):
-    with open(fpath,'rt') as f:
-        return f.readlines()  # [time amplitude\n, ...]으로 저장됨
+    def load(self):
+        config = {}
+        with open('config.ini','rt') as f:
+            entries = f.readlines()
+            for entry in entries:
+                key, value = entry.split('=')
+                config[key.strip()] = value.strip()
+        return config
 
-## [time amplitude\n, ...] -> [[time, amplitude], ...]
-def convert(dataset):
-    data = [data.split() for data in dataset]
-    time = list(data[i][0] for i in range(len(data)))
-    amplitude = list(data[i][1] for i in range(len(data)))
-    return (time, amplitude)
+    def __str__(self):
+        return f'<Configuration fname {self.fname}>'
 
-def main():
-    fpath = 'data/Rawdata/class0/C1#100000.dat'
-    dataset = load(fpath)
-    time, amplitude = convert(dataset)
-    print(time, amplitude)
+# data.csv file 불러오기
+class LablingSignal:
+    def __init__(self):
+        data = self.load()
+        self.signals = data[0]
+        self.labels = data[1]
+    
+    def load(self, config):
+        data = np.loadtxt(config.name, delimiter=config.delimiter, dtype=config.dtype)
+        signals = data[:, :-1]
+        labels = data[:, -1].astype('int') 
+        return (signals, labels)
 
-main()
+# scaling
+class Scaling:
+    def __init__(self):
+        self.scaling_signal = None
 
-# 노이즈 추가 -> csv말고 pickle로 저장
-
+    def scaling(self, signals):
+        pass
+    
 # 이미지로 변환
+
+# Cross validation
+
