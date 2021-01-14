@@ -1,6 +1,39 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/windows,python,vscode
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,python,vscode
+# Created by https://www.toptal.com/developers/gitignore/api/vscode,python,matlab
+# Edit at https://www.toptal.com/developers/gitignore?templates=vscode,python,matlab
+
+### MATLAB ###
+# Windows default autosave extension
+*.asv
+
+# OSX / *nix default autosave extension
+*.m~
+
+# Compiled MEX binaries (all platforms)
+*.mex*
+
+# Packaged app and toolbox files
+*.mlappinstall
+*.mltbx
+
+# Generated helpsearch folders
+helpsearch*/
+
+# Simulink code generation folders
+slprj/
+sccprj/
+
+# Matlab code generation folders
+codegen/
+
+# Simulink autosave extension
+*.autosave
+
+# Simulink cache files
+*.slxc
+
+# Octave session info
+octave-workspace
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -150,30 +183,4 @@ dmypy.json
 !.vscode/extensions.json
 *.code-workspace
 
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
-
-# Folder config file
-[Dd]esktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/windows,python,vscode
+# End of https://www.toptal.com/developers/gitignore/api/vscode,python,matlab
