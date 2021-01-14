@@ -2,10 +2,33 @@
 
 
 
-## data processing (MATLAB)
+## data preprocessing (MATLAB)
 
-1. 초음파 에코신호의 첫번째 에코부분 자르기
-2. shift(생략)
-3. 라벨링 후 .csv로 저장
-4. SNR에 따른 노이즈 추가
+- 초음파 에코신호의 첫번째 에코부분 자르기 (signal_cut.m)
+
+- ~~shift(signal_shift.m)~~
+
+- SNR에 따른 노이즈 추가(signal_noise.m)
+
+- 폴더 안에 파일 label별로 불러오기(structure_data.m)
+
+- 라벨링 후 .csv로 저장 `main`
+
+  
+
+## data preprocessing (Python)
+
+req
+
+
+
+
+
+models.py
+
+train.py
+
+test.py
+
+
 

@@ -1,4 +1,4 @@
-function [time, amplitude] = shift_signals(data, shift_time, shift_rep)
+function [time, amplitude] = signal_shift(data, shift_time, shift_rep)
 % Shift the signal
 time_ = data(:,1);
 dt = time_(2)-time_(1);

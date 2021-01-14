@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/vscode,python,matlab
 # Edit at https://www.toptal.com/developers/gitignore?templates=vscode,python,matlab
 
+data/
+pass/
+
 ### MATLAB ###
 # Windows default autosave extension
 *.asv
