@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 ## data preprocessing (MATLAB)
 
 - 초음파 에코신호의 첫번째 에코부분 자르기 (signal_cut.m)
@@ -18,17 +22,24 @@
 
 ## data preprocessing (Python)
 
-req
+- modules.req
+
+  `$ pip install -r modules.req`
+
+- data_process.py
+
+  - load data
+  - scaling
+  - [signal to image](https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B92%5D.pdf)
+  - ~~cross validation~~
 
 
 
+- models.py
 
+- train.py
 
-models.py
-
-train.py
-
-test.py
+- test.py
 
 
 
